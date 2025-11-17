@@ -13,6 +13,17 @@ type MotionViewportProps = BoxProps &
     disableAnimate?: boolean;
   };
 
+// Custom props for animation variants
+type VariantProps = {
+  distance?: number;
+  durationIn?: number;
+  durationOut?: number;
+  easeIn?: number[];
+  easeOut?: number[];
+  staggerIn?: number;
+  delayIn?: number;
+};
+
 export function MotionViewport({
   children,
   disableAnimate = false,
@@ -40,7 +51,7 @@ export function MotionViewport({
 }
 
 // Variants for animations
-export const varFade = (props?: MotionProps) => {
+export const varFade = (props?: VariantProps) => {
   const distance = props?.distance || 120;
   const durationIn = props?.durationIn || 0.64;
   const durationOut = props?.durationOut || 0.48;
@@ -114,7 +125,7 @@ export const varFade = (props?: MotionProps) => {
 };
 
 // Container variant for stagger children
-export const varContainer = (props?: MotionProps) => {
+export const varContainer = (props?: VariantProps) => {
   const staggerIn = props?.staggerIn || 0.05;
   const delayIn = props?.delayIn || 0.05;
 

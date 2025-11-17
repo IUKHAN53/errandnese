@@ -1,13 +1,11 @@
 'use client';
 
-import { m } from 'framer-motion';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Divider from '@mui/material/Divider';
 import { useTheme, alpha } from '@mui/material/styles';
-import { MotionViewport, varFade } from '@/components/animate/motion-viewport';
 
 const sections = [
   {
@@ -106,10 +104,6 @@ export default function Privacy() {
       >
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Box
-            component={m.div}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
             sx={{ textAlign: 'center' }}
           >
             <Typography
@@ -132,8 +126,8 @@ export default function Privacy() {
       {/* Content Section */}
       <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: 'background.default' }}>
         <Container maxWidth="md">
-          <MotionViewport>
-            <Box component={m.div} variants={varFade().inUp} sx={{ mb: 6 }}>
+          <Box>
+            <Box sx={{ mb: 6 }}>
               <Paper
                 elevation={0}
                 sx={{
@@ -154,8 +148,6 @@ export default function Privacy() {
             {sections.map((section, index) => (
               <Box
                 key={section.title}
-                component={m.div}
-                variants={varFade().inUp}
                 sx={{ mb: 5 }}
               >
                 <Typography
@@ -183,7 +175,7 @@ export default function Privacy() {
                 )}
               </Box>
             ))}
-          </MotionViewport>
+          </Box>
         </Container>
       </Box>
     </Box>
