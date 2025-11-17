@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -33,19 +34,15 @@ export default function Header() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography
-        variant="h6"
-        sx={{
-          my: 2,
-          fontWeight: 800,
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-          backgroundClip: 'text',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-        }}
-      >
-        Errandnese LLC
-      </Typography>
+      <Box sx={{ my: 2, display: 'flex', justifyContent: 'center' }}>
+        <Image
+          src="/logo.svg"
+          alt="Errandnese LLC"
+          width={160}
+          height={48}
+          priority
+        />
+      </Box>
       <List>
         {navItems.map((item) => (
           <ListItem key={item.label} disablePadding>
@@ -88,26 +85,18 @@ export default function Header() {
           <Box
             sx={{ flexGrow: { xs: 1, md: 0 }, mr: { md: 4 } }}
           >
-            <Link href="/" style={{ textDecoration: 'none' }}>
-              <Typography
-                variant="h6"
-                noWrap
-                sx={{
-                  fontWeight: 800,
-                  fontSize: { xs: '1.25rem', md: '1.5rem' },
-                  background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
+            <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+              <Image
+                src="/logo.svg"
+                alt="Errandnese LLC"
+                width={160}
+                height={48}
+                priority
+                style={{
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
-                  '&:hover': {
-                    filter: 'brightness(1.2)',
-                  },
                 }}
-              >
-                Errandnese LLC
-              </Typography>
+              />
             </Link>
           </Box>
 

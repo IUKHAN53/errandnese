@@ -22,6 +22,7 @@ export default function RootLayout({
         <meta name="description" content="Trusted sourcing and logistics partner helping global clients find, inspect, and ship products efficiently from China. Professional services for eCommerce brands and importers." />
         <meta name="keywords" content="sourcing, logistics, China sourcing, product inspection, international shipping, eCommerce, supply chain" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
         <AppRouterCacheProvider options={{ key: 'css' }}>
