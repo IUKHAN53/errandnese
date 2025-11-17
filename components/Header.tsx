@@ -21,6 +21,7 @@ import { Iconify } from './iconify';
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -34,15 +35,19 @@ export default function Header() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Box sx={{ my: 2, display: 'flex', justifyContent: 'center' }}>
-        <Image
-          src="/logo.svg"
-          alt="Errandnese LLC"
-          width={160}
-          height={48}
-          priority
-        />
-      </Box>
+      <Typography
+        variant="h6"
+        sx={{
+          my: 2,
+          fontWeight: 800,
+          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}
+      >
+        Errandnese LLC
+      </Typography>
       <List>
         {navItems.map((item) => (
           <ListItem key={item.label} disablePadding>
